@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte - Foot Ligue 1{% endblock %}
+
+{% block content %}
+    <h2>Mon compte</h2>
+
+    <div>
+        <p>Bienvenue dans votre compte,  {{ app.user.firstname }}.</p>
+        <a href="{{ path('account_password') }}">- Modifier mon mot de passe</a><br>
+    </div>
+    
+{% endblock %}

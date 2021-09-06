@@ -10,6 +10,7 @@
     <!-- Récupérer la fichier bootstrap CSS dans le dossier assets de public -->
     <link href={{ asset('assets/css/bootstrap.min.css') }} rel="stylesheet">
     <link rel="icon" type="image/png" href="{{ asset('assets/images/icone_site.png') }}"/>
+    <link rel="stylesheet" href="{{ asset('assets/css/footligue1.css') }}">
 
     <style>
         .bd-placeholder-img {
@@ -33,20 +34,32 @@
 <body>
 <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">Foot Ligue 1</a>
+        <a class="navbar-brand" href="{{ path('home') }}">Foot Ligue 1</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ path('home') }}">Accueil</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ path('home') }}">Nos produits</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ path('home') }}">Contact</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ path('home') }}">À propos</a>
                 </li>
             </ul>
-            <form class="form-inline mt-2 mt-md-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Votre recherche" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
-            </form>
+            <div class="navbar-custom">
+                {% if app.user %}
+                    <a href="{{ path('account') }}">Mon compte <small>( {{ app.user.firstname }} )</small></a> &bull; <a href="{{ path('app_logout') }}">Déconnexion</a>
+                {% else %}
+                    <a href="{{ path('app_login') }}">Connexion</a> &bull; <a href="{{ path('register') }}">Inscription</a>
+                {% endif %}
+            </div>
         </div>
     </nav>
 </header>
@@ -117,9 +130,12 @@
     </div><!-- /.container -->
 
     <!-- FOOTER -->
-    <footer class="container">
-        <p class="float-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2017-2020 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    <footer>
+        <p>
+            &copy; 2021 - Foot Ligue 1<br>
+            <small>Site N°1 des maillots de Ligue 1 !<br>
+            <a href="#">Privacy</a> &middot; <a href="#">Terms</a></small>
+        </p>
     </footer>
 </main>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
