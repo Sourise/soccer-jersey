@@ -35,7 +35,7 @@ class Product
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $subtitle;
+    private $mark;
 
     /**
      * @ORM\Column(type="text")
@@ -94,14 +94,14 @@ class Product
         return $this;
     }
 
-    public function getSubtitle(): ?string
+    public function getMark(): ?string
     {
-        return $this->subtitle;
+        return $this->mark;
     }
 
-    public function setSubtitle(string $subtitle): self
+    public function setMark(string $mark): self
     {
-        $this->subtitle = $subtitle;
+        $this->mark = $mark;
 
         return $this;
     }

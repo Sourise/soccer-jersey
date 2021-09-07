@@ -28,9 +28,8 @@ class ProductCrudController extends AbstractCrudController
             ImageField::new('illustration')
                 ->setBasePath('uploads/')
                 ->setUploadDir('public/uploads/')
-                ->setUploadedFileNamePattern('[ramdomhash].[extension]')
                 ->setRequired(false),
-            TextField::new('subtitle'),
+            TextField::new('mark'),
             TextareaField::new('description'),
             MoneyField::new('price')
                 ->setCurrency('EUR'),
