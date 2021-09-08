@@ -1,7 +1,30 @@
+body {
+    position: relative;
+}
+
 .navbar-custom, .navbar-custom a {
     color: #fff
 }
 
-footer {
-    text-align: center;
+.product-item h4 {
+    font-size: 17px;
+    margin-top: 40px;
+}
+
+.products-mark {
+    font-size: 17px;
+}
+
+.product-mark {
+    font-size: 18px;
+}
+
+.products-price {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.product-price {
+    font-size: 19px;
+    font-weight: bold;
 }

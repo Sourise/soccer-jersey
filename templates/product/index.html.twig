@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos produits - Foot Ligue 1{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-3">
+            <h3>Filtrer</h3>
+        </div>
+        <div class="col-md-9">
+            <h2>Nos produits</h2>
+
+    <div class="row">
+    {% for product in products %}
+        <div class="col-md-4">
+                <div class="product-item text-center">
+                    <a href="{{ path('product', {'slug' : product.slug}) }}">
+                    <h4>{{ product.name }}</h4>
+                    <p class="products-mark">{{ product.mark }}</p>
+                    <img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" class="img-fluid">
+                    <p class="products-price">{{ (product.price / 100)|number_format(2, ',','.') }}€</p>
+                    </a>
+                </div>
+        </div>
+    {% endfor %}
+        </div>
+    </div>
+    
+
+{% endblock %}
