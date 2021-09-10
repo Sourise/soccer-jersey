@@ -28,3 +28,13 @@ body {
     font-size: 19px;
     font-weight: bold;
 }
+
+.blj {
+    border: solid 1px rgba(0, 0, 0, 0.205);
+    border-radius: 10px;
+}
+
+.icone-cart {
+    height: 27px;
+    padding-left: 8px;
+}
