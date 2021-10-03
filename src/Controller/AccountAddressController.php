@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Address;
+use App\Form\AddressType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -21,6 +23,12 @@ class AccountAddressController extends AbstractController
      */
     public function add(): Response
     {
-        return $this->render('account/add_address.html.twig');
+        $address = new Address();
+
+        $form = $this->createForm(AddressType::class, $address);
+
+        return $this->render('account/add_address.html.twig', [
+            'form' => $form->createView()
+        ]);
     }
 }
