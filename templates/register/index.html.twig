@@ -2,7 +2,15 @@
 
 {% block content %}
     <h2>Inscription</h2>
+    <hr>
 
-    {{ form(form) }}
+    {{ form_start(form) }}
+    <div class="row">
+        <div class="col-md-7">{{ form_row(form.firstname)}}</div>
+        <div class="col-md-7">{{ form_row(form.lastname)}}</div>
+        <div class="col-md-7">{{ form_row(form.email)}}</div>
+        <div class="col-md-7">{{ form_row(form.password)}}</div>
+    </div>
+    {{ form_end(form) }}
 
 {% endblock %}

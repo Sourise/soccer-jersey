@@ -38,3 +38,7 @@ body {
     height: 27px;
     padding-left: 8px;
 }
+
+.p-header {
+    color: red !important;
+}
