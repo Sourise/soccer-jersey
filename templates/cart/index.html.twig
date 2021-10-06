@@ -53,7 +53,7 @@
         <p>
             <i>Nombre de produit(s) :</i> <b>{{ cart|length }}</b><br>
             <i>Total de mon panier :</i> <b>{{ (total / 100)|number_format(2, ',','.') }}€</b><br>
-            <a href="" class="btn btn-success btn-block mt-3">Valider mon panier</a>
+            <a href="{{ path('order') }}" class="btn btn-success btn-block mt-3">Valider mon panier</a>
         </p>
     </div>
     {% else %}
