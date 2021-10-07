@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Classement Ligue 1 - Foot Ligue 1{% endblock %}
+
+{% block content %}
+    <h2>Classement Ligue 1</h2>
+    <hr>
+
+    <div id="wg-api-football-standings" 
+        data-host="v3.football.api-sports.io" 
+        data-league="61" 
+        data-team=""
+        data-season="2021" 
+        data-key="eea0ecc387ee0eb60c12fabe168ceff4" 
+        data-theme=""
+        data-show-errors="false" 
+        class="api_football_loader">
+    </div> 
+    
+    <script type="module" src="https://widgets.api-sports.io/football/1.1.8/widget.js"></script>
+
+{% endblock %}
