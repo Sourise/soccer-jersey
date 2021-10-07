@@ -43,3 +43,23 @@ body {
     max-width: 600px;
     margin: auto 0;
 }
+
+.form-check {
+    background-color: #68bae031;
+    border-radius: 10px;
+    padding: 20px 65px;
+    margin-top: 7px;
+}
+
+.col-form-label {
+    font-weight: bold;
+}
+
+.recap {
+    font-weight: bold;
+}
+
+.order-summary {
+    padding: 20px;
+    margin-top: 20px;
+}
