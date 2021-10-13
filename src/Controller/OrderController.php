@@ -61,12 +61,13 @@ class OrderController extends AbstractController
             $carriers = $form->get('carriers')->getData();
             $delivery = $form->get('addresses')->getData();
             $delivery_content = $delivery->getFirstname().' '.$delivery->getLastname();
+            $delivery_content .= '<br>'.$delivery->getPhone();
             
             if ($delivery->getCompany()) {
                     $delivery_content .= '<br>'.$delivery->getCompany();
                 }
 
-            $delivery_content .= '<br>'.$delivery->getCompany();
+            $delivery_content .= '<br>'.$delivery->getAddress();
             $delivery_content .= '<br>'.$delivery->getPostal().' '.$delivery->getCity();
             $delivery_content .= '<br>'.$delivery->getCountry();
 
@@ -75,6 +76,7 @@ class OrderController extends AbstractController
             $order->setCreatedAt($date);
             $order->setCarrierName($carriers->getName());
             $order->setCarrierPrice($carriers->getPrice());
+            $order->setDelivery($delivery_content);
             $order->setIsPaid(0);
 
             $this->entityManager->persist($order);
@@ -89,7 +91,8 @@ class OrderController extends AbstractController
                 $this->entityManager->persist($orderDetails);
             }
 
-            //$this->entityManager->flush();
+            $this->entityManager->flush();
+            
             return $this->render('order/add.html.twig', [
                 'cart' => $cart->getFull(),
                 'carrier' => $carriers,
