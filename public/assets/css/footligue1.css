@@ -64,8 +64,6 @@ body {
     margin-top: 20px;
 }
 
-/* Widget */
-
-.api_football_header {
-    
+#vld {
+    cursor: no-drop;
 }
